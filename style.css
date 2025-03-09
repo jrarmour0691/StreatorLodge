@@ -8,6 +8,7 @@
 	
 	body{
 		min-height: 100vh;
+		max-width: 100%;
 	}
 	.coverPhoto{
 	width: 100%;
@@ -26,10 +27,10 @@
 	}
 	
 	.navbar li a:hover{
-		background-size: 30px;
+		background-size: 1.875em;
 		background-color: #032687;
 		color: white;
-		box-shadow: 3px 10px 10px 10px #1a1818a1;
+		box-shadow: .1875em .625em .625em .625em #1a1818a1;
 		position:relative;
 		z-index: 2;
 		
@@ -63,66 +64,199 @@
 	}
 	
 	li a{
-	color: black; font-size: 25px; padding: 12px;
+	color: black; font-size: clamp(0.5em, 3vw ,1.5625em); padding: 12px;
 	}
 	
 	ul.navLeft{
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-left: 5px;
 	margin: auto;
 	width: 33%;
 	z-index: 1;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	grid-template-areas: " item1 item2 item3";
 	}
+	
+	#nav-bar-item1{ grid-area: item1;}
+	#nav-bar-item2{ grid-area: item2;}
+	#nav-bar-item3{ grid-area: item3;}
 	
 	ul.navRight{
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-right: 5px;
 	margin: auto;
 	width: 33%;
 	z-index: 1;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	grid-template-areas: " item4 item5 item6";
+	}
+	
+	#nav-bar-item4{ grid-area: item4;}
+	#nav-bar-item5{ grid-area: item5;}
+	#nav-bar-item6{ grid-area: item6;}
+	
+	
+	
+	.innerPage {
+		display: grid;
+		grid-template-columns:repeat(4, 1fr);
+		grid-template-rows:1fr, 12.5rem, 31.25rem, 31.25rem, 31.25rem;
+		grid-template-areas:
+		" welcome welcome welcome welcome"
+		"sectionHeader sectionHeader sectionHeader sectionHeader"
+		"section1 section1 img1 img1"
+		"img2 img2 section2 section2"
+		"section3 section3 img3 img3";
 	}
 	
 	
-	.welcomeImg{
+	@media (width < 62.5em) {
+		ul.navLeft{
+			display:grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, 1fr);
+			grid-template-areas: " item1" "item2" "item3";
+		}
+		ul.navRight{
+			display:grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, 1fr);
+			grid-template-areas: " item4" "item5" "item6";
+		}
+	
+	.innerPage {
+		display: grid;
+		grid-template-columns:repeat(1, 1fr);
+		grid-template-rows:1fr, 12.5em, 12.5em, 31.25em, 12.5em, 31.25em, 12.5em, 31.25em;
+		grid-template-areas:
+		" welcome"
+		"sectionHeader"
+		"section1"
+		"img1"
+		"section2"
+		"img2"
+		"section3"
+		"img3";
+		}
+	
+	}
+	
+	.innerPage .welcome{
 		width: 100%;
-		max-height: 500px;
-		padding-left: 20px;
-		padding-right: 20px;
+		grid-area: welcome;
+	}
+	
+	.innerPage div.sectionHeader {
+		grid-area: sectionHeader;
 		
 	}
 	
-	.container {
+	.innerPage div.sectionHeader h1::before{
+			content: "";
+            flex-grow: 1;
+            height: clamp(0.2125em, 2vw ,0.7375em);
+            background-color: black;
+            margin-right: 10px;
+	}
+	
+	.innerPage div.sectionHeader h1{
 		display: flex;
-	}
-	.p1{
-	width: 50%;
-	}
-	.p1 p{
-	text-align: justify;
-	font-size: 20px;
-	margin-left: 20px;
-	padding: 5px 15px;
+        align-items: center;
+		font-size: clamp(3.125em, 8vw,7.1875em);
+		font-style: italic;
+		margin: 15px;
+		margin-bottom: 10px;
 	}
 	
-	h1{
-	text-align: center;
+	.innerPage div.sectionHeader h1::after{
+			content: "";
+            flex-grow: 1;
+            height: clamp(0.2125em, 2vw ,0.7375em);
+            background-color: black;
+            margin-left: 10px;
 	}
 	
-	.p1 h2{
-	padding-top: 15px;
-	margin-left: 35px;
+	.innerPage .section1 {
+		grid-area: section1;
+		padding: 10px;
+		align-content: center;
 	}
 	
-	
-	.p1IMG {
-		width: 50%;
-		box-sizing: border-box;
+	#section1header {
+		font-size: clamp(0.8em, 5vw ,2.1875em);
+		color: #032687;
+		text-align: center;
 	}
 	
-	.p1IMG img{
+	#section1detail {
 		padding: 15px;
-		width: 100%;
+		font-size: clamp(0.3em, 4vw, 1.5625em);
+		text-align: center;
 	}
+	
+	.innerPage .p1IMG {
+		grid-area: img1;
+		padding: 15px;
+	}
+	
+	.innerPage .section2{
+		grid-area: section2;
+		padding: 10px;
+		align-content: center;
+	}
+	
+	.innerPage .p2IMG {
+		grid-area: img2;
+		padding: 15px;
+	}
+	
+	
+	
+	
+	#section2header {
+		font-size: clamp(0.8em, 5vw ,2.1875em);
+		color: #032687;
+		text-align: center;
+	}
+	
+	#section2detail {
+		padding: 15px;
+		font-size: clamp(0.3em, 4vw, 1.5625em);
+		text-align: center;
+	}
+	
+	.innerPage .section3{
+		grid-area: section3;
+		padding: 10px;
+		align-content: center;
+	}
+	
+	.innerPage .p3IMG {
+		grid-area: img3;
+		padding: 15px;
+	}
+	
+	
+	
+	
+	#section3header {
+		font-size: clamp(0.8em, 5vw ,2.1875em);
+		color: #032687;
+		text-align: center;
+	}
+	
+	#section3detail {
+		padding: 15px;
+		font-size: clamp(0.3em, 4vw, 1.5625em);
+		text-align: center;
+	}
+	
 	
 	.footerContainer {
 		display: grid;
@@ -170,6 +304,5 @@
 	#Facebook {
 		width: 50px;
 	}
-	
 	
 	
