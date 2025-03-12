@@ -24,6 +24,7 @@
 	box-sizing: border-box;
 	min-height: 30px;
 	box-shadow: 3px 10px 10px #1a1818a1;
+	z-index: 2;
 	}
 	
 	.navbar li a:hover{
@@ -32,7 +33,7 @@
 		color: white;
 		box-shadow: .1875em .625em .625em .625em #1a1818a1;
 		position:relative;
-		z-index: 2;
+		z-index: 3;
 		
 	}
 	
@@ -105,14 +106,17 @@
 	
 	.innerPage {
 		display: grid;
-		grid-template-columns:repeat(4, 1fr);
-		grid-template-rows:1fr, 12.5rem, 31.25rem, 31.25rem, 31.25rem;
+		grid-template-columns:repeat(6, 1fr);
+		grid-template-rows:1fr, 12.5rem, 31.25rem, 31.25rem, 31.25rem, 12.5rem, 12.5rem, 32rem;
 		grid-template-areas:
-		" welcome welcome welcome welcome"
-		"sectionHeader sectionHeader sectionHeader sectionHeader"
-		"section1 section1 img1 img1"
-		"img2 img2 section2 section2"
-		"section3 section3 img3 img3";
+		" welcome welcome welcome welcome welcome welcome"
+		"sectionHeader sectionHeader sectionHeader sectionHeader sectionHeader sectionHeader"
+		"section1 section1 section1 img1 img1 img1"
+		"img2 img2 img2 section2 section2 section2"
+		"section3 section3 section3 img3 img3 img3"
+		"QA QA QA QA QA QA"
+		"newsHeader newsHeader newsHeader newsHeader newsHeader newsHeader"
+		"news1 news1 news2 news2 news3 news3";
 	}
 	
 	
@@ -133,7 +137,7 @@
 	.innerPage {
 		display: grid;
 		grid-template-columns:repeat(1, 1fr);
-		grid-template-rows:1fr, 12.5em, 12.5em, 31.25em, 12.5em, 31.25em, 12.5em, 31.25em;
+		grid-template-rows:1fr, 12.5em, 12.5em, 31.25em, 12.5em, 31.25em, 12.5em, 31.25em, 22.5em, 12.5em, 32em, 32em, 32em;
 		grid-template-areas:
 		" welcome"
 		"sectionHeader"
@@ -142,8 +146,14 @@
 		"section2"
 		"img2"
 		"section3"
-		"img3";
+		"img3"
+		"QA"
+		"newsHeader"
+		"news1"
+		"news2"
+		"news3";
 		}
+		
 	
 	}
 	
@@ -156,19 +166,23 @@
 		grid-area: sectionHeader;
 		
 	}
+	#newsHeader {
+		grid-area: newsHeader;
+	}
 	
 	.innerPage div.sectionHeader h1::before{
 			content: "";
             flex-grow: 1;
-            height: clamp(0.2125em, 2vw ,0.7375em);
+            height: clamp(0.2125em, 2vw ,0.5375em);
             background-color: black;
             margin-right: 10px;
+			margin-left: 10vw;
 	}
 	
 	.innerPage div.sectionHeader h1{
 		display: flex;
         align-items: center;
-		font-size: clamp(3.125em, 8vw,7.1875em);
+		font-size: clamp(2em, 6vw,5.1875em);
 		font-style: italic;
 		margin: 15px;
 		margin-bottom: 10px;
@@ -177,25 +191,77 @@
 	.innerPage div.sectionHeader h1::after{
 			content: "";
             flex-grow: 1;
-            height: clamp(0.2125em, 2vw ,0.7375em);
+            height: clamp(0.2125em, 2vw ,0.5375em);
             background-color: black;
             margin-left: 10px;
+			margin-right: 8vw ;
 	}
 	
 	.innerPage .section1 {
 		grid-area: section1;
 		padding: 10px;
+		display: grid;
+		place-items: center;
 		align-content: center;
+		grid-template-columns: 1fr;
+		grid-template-rows:repeat (3, 1fr);
+		grid-template-areas:
+		"header" 
+		"details"
+		"btn";
+		grid-gap: 10px;
+		
+	}
+
+	
+	.btn1 {
+		grid-area: btn;
+		width: 15.25em;
+		height: 2.5em;
+		color: black;
+		border-radius: .25em;
+		transition: ease-out 0.3s;
+		font-size: clamp(0.3em, 4vw, 1.25em);
+		outline: none;
+		border: 3px solid blue;
+		position: relative;
+		z-index: 1;
+	}
+	
+	.btn1:hover {
+		color: white;
+		cursor: pointer;
+	}
+	
+	.btn1:before {
+		transition: 0.5s all ease;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		right: 50%;
+		bottom: 0;
+		opacity: 0;
+		content: "";
+		background-color: blue;
+	}
+	
+	.btn1:hover:before {
+		transition: 0.5s all ease;
+		left: 0;
+		right: 0;
+		opacity: 1;
+		z-index: -1;
 	}
 	
 	#section1header {
+		grid-area: header;
 		font-size: clamp(0.8em, 5vw ,2.1875em);
 		color: #032687;
 		text-align: center;
 	}
 	
 	#section1detail {
-		padding: 15px;
+		grid-area: details;
 		font-size: clamp(0.3em, 4vw, 1.5625em);
 		text-align: center;
 	}
@@ -209,6 +275,7 @@
 		grid-area: section2;
 		padding: 10px;
 		align-content: center;
+		place-items: center;
 	}
 	
 	.innerPage .p2IMG {
@@ -235,6 +302,7 @@
 		grid-area: section3;
 		padding: 10px;
 		align-content: center;
+		place-items: center;
 	}
 	
 	.innerPage .p3IMG {
@@ -258,6 +326,111 @@
 	}
 	
 	
+	.fmquestion{
+		grid-area: QA;
+		place-items: center;
+	
+	}
+	
+	.fmquestion .section4{
+		text-align: center;
+		align-content: center;
+		background-color: white;
+		box-shadow: 3px 10px 10px #1a1818a1;
+		border-radius: 4px;
+		width: 90%;
+		height: 20em;
+	}
+	
+	.fmquestion .section4 h3{
+		font-size: clamp(0.8em, 5vw ,2.1875em);
+		color: #032687;
+	}
+	
+	.fmquestion .section4 p {
+		padding: 15px;
+		font-size: clamp(0.3em, 4vw, 1.5625em);
+	}
+	.news1{
+		grid-area: news1;
+		font-size: clamp(0.3em, 4vw, 1.5625em);  
+		text-align: center; 
+		height: 32rem; 
+		place-items: center;
+		margin-bottom: -3em;
+		}
+	.news2{
+	grid-area: news2; 
+	font-size: clamp(0.3em, 4vw, 1.5625em);  
+	text-decoration: underline; 
+	text-align: center; 
+	height: 32rem;
+	place-items: center;
+	margin-bottom: -3em;
+	}
+	.news3{
+	grid-area: news3; 
+	font-size: clamp(0.3em, 4vw, 1.5625em); 
+	text-decoration: underline; 
+	text-align: center; 
+	height: 32rem; 
+	place-items: center;
+	margin-bottom: -3em;
+	}
+	
+	.articleImg1{
+		background-color: #f1f1f1;
+		height: 60%;
+	}
+	.articleImg2{
+		background-color: #f1f1f1;
+		height: 60%;
+	}
+	.articleImg3{
+		background-color: #f1f1f1;
+		height: 60%;
+	}
+	#articleLink1 {
+		display: block;
+		background-color: black;
+		width: 90%;
+		height: 20%;
+		color: white;
+		text-decoration: underline;
+		text-decoration-color: white;
+		
+	}
+	#articleLink1:hover{
+		text-decoration:none;
+	}
+	
+	#articleLink2 {
+		display: block;
+		background-color: black;
+		width: 90%;
+		height: 20%;
+		color: white;
+		text-decoration: underline;
+		text-decoration-color: white;
+		
+	}
+	#articleLink2:hover{
+		text-decoration:none;
+	}
+	
+	#articleLink3 {
+		display: block;
+		background-color: black;
+		width: 90%;
+		height: 20%;
+		color: white;
+		text-decoration: underline;
+		text-decoration-color: white;
+		
+	}
+	#articleLink3:hover{
+		text-decoration:none;
+	}
 	.footerContainer {
 		display: grid;
 		grid-template-columns:repeat(2, 1fr);
@@ -304,5 +477,6 @@
 	#Facebook {
 		width: 50px;
 	}
+	
 	
 	
