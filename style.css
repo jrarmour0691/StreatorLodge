@@ -274,8 +274,16 @@
 	.innerPage .section2{
 		grid-area: section2;
 		padding: 10px;
-		align-content: center;
+		display: grid;
 		place-items: center;
+		align-content: center;
+		grid-template-columns: 1fr;
+		grid-template-rows:repeat (3, 1fr);
+		grid-template-areas:
+		"header2" 
+		"details2"
+		"btn";
+		grid-gap: 0px;
 	}
 	
 	.innerPage .p2IMG {
@@ -287,12 +295,14 @@
 	
 	
 	#section2header {
+		grid-area: header2;
 		font-size: clamp(0.8em, 5vw ,2.1875em);
 		color: #032687;
 		text-align: center;
 	}
 	
 	#section2detail {
+		grid-area: details2;
 		padding: 15px;
 		font-size: clamp(0.3em, 4vw, 1.5625em);
 		text-align: center;
@@ -301,8 +311,16 @@
 	.innerPage .section3{
 		grid-area: section3;
 		padding: 10px;
-		align-content: center;
+		display: grid;
 		place-items: center;
+		align-content: center;
+		grid-template-columns: 1fr;
+		grid-template-rows:repeat (3, 1fr);
+		grid-template-areas:
+		"header3" 
+		"details3"
+		"btn";
+		grid-gap: 0px;
 	}
 	
 	.innerPage .p3IMG {
@@ -314,12 +332,14 @@
 	
 	
 	#section3header {
+		grid-area: header3;
 		font-size: clamp(0.8em, 5vw ,2.1875em);
 		color: #032687;
 		text-align: center;
 	}
 	
 	#section3detail {
+		grid-area: details3;
 		padding: 15px;
 		font-size: clamp(0.3em, 4vw, 1.5625em);
 		text-align: center;
@@ -356,17 +376,27 @@
 		font-size: clamp(0.3em, 4vw, 1.5625em);  
 		text-align: center; 
 		height: 32rem; 
+		grid-template-columns: 1fr;
+		grid-template-rows: 32em, 1fr;
 		place-items: center;
 		margin-bottom: -3em;
+		grid-template-areas: 
+		"Aimg1"
+		"Alink1";
 		}
 	.news2{
 	grid-area: news2; 
 	font-size: clamp(0.3em, 4vw, 1.5625em);  
 	text-decoration: underline; 
 	text-align: center; 
-	height: 32rem;
+	height: 32rem; 
+	grid-template-columns: 1fr;
+	grid-template-rows: 32em, 1fr;
 	place-items: center;
 	margin-bottom: -3em;
+	grid-template-areas: 
+	"Aimg2"
+	"Alink2";	
 	}
 	.news3{
 	grid-area: news3; 
@@ -374,23 +404,32 @@
 	text-decoration: underline; 
 	text-align: center; 
 	height: 32rem; 
+	grid-template-columns: 1fr;
+	grid-template-rows: 32em, 1fr;
 	place-items: center;
 	margin-bottom: -3em;
+	grid-template-areas: 
+	"Aimg3"
+	"Alink3";
 	}
 	
 	.articleImg1{
+		grid-area: Aimg1;
 		background-color: #f1f1f1;
 		height: 60%;
 	}
 	.articleImg2{
+		grid-area: Aimg2;
 		background-color: #f1f1f1;
 		height: 60%;
 	}
 	.articleImg3{
+		grid-area: Aimg3;
 		background-color: #f1f1f1;
 		height: 60%;
 	}
 	#articleLink1 {
+		grid-area: Alink1;
 		display: block;
 		background-color: black;
 		width: 90%;
@@ -405,6 +444,7 @@
 	}
 	
 	#articleLink2 {
+		grid-area: Alink2;
 		display: block;
 		background-color: black;
 		width: 90%;
@@ -419,6 +459,7 @@
 	}
 	
 	#articleLink3 {
+		grid-area: Alink3;
 		display: block;
 		background-color: black;
 		width: 90%;
