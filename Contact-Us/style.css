@@ -21,9 +21,10 @@
 	place-items: center;
 }
 
-.contactinnerPage h1 {
+.contactinnerPage .contactInfo h1 {
 	color: #032687;
-	padding-left: 10px;
+	padding-bottom: .75em;
+	padding-top: .75em;
 }
 
 .contactInfo {
