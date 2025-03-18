@@ -19,3 +19,16 @@ body h1 {
     align-items: center;
 
 }
+
+.fb-frame {
+	width: 500px;
+	height: 500px;
+}
+
+@media (width < 62.5em) {
+	changeSrc();
+	.fb-frame {
+    width: 300px;
+	height: 500px;
+  }
+}
