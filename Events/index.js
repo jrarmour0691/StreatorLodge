@@ -20,11 +20,15 @@ function updateIframeSrc() {
   // Change the src dynamically based on screen width
   if (screenWidth > 479) {
     // For desktops or larger devices
-    iframe.src = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fstreator.lodge&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId";
+    	iframe.src = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fstreator.lodge&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId";
+	iframe.style.width = '500px';
+    	iframe.style.height = '500px';
   } else {
     // For tablets or smaller devices
     iframe.src = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fstreator.lodge&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId";
-}
+    iframe.style.width = '300px';
+    iframe.style.height = '500px';
+  }
 }
 
 // Set the iframe src when the page loads
