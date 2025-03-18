@@ -11,3 +11,10 @@ body h1 {
 	color: #032687;
 	text-align: center;
 }
+
+.fb-container {
+	display: flex;
+    justify-content: center; 
+    align-items: center;
+	width: 100%;
+}
