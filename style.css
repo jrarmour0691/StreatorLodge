@@ -15,32 +15,25 @@
 	max-height: 400px;
 	}
 	.navbar{
-	position: sticky;
-	top: 50px;
-	background-color: white; 
-	font-family: 'Times New Roman', serif; 
-	padding-right: 15px; 
-	padding-left: 15px;
-	box-sizing: border-box;
-	min-height: 30px;
-	box-shadow: 3px 10px 10px #1a1818a1;
-	z-index: 2;
+	position: sticky !important;
+	top: 50px !important;
+	background-color: white !important; 
+	font-family: 'Times New Roman', serif !important; 
+	padding-right: 15px !important; 
+	padding-left: 15px !important;
+	box-sizing: border-box !important;
+	min-height: 30px !important;
+	box-shadow: 3px 10px 10px #1a1818a1 !important;
+	z-index: 10 !important;
+	display: block !important;
+	text-decoration: none !important;
+	margin: 0px !important;
+	padding: 0px !important;
+	box-sizing: border-box !important;
 	}
 	
-	.navbar li a:hover{
-		background-size: 1.875em;
-		background-color: #032687;
-		color: white;
-		box-shadow: .1875em .625em .625em .625em #1a1818a1;
-		position:relative;
-		z-index: 3;
-		
-	}
 	
-	.navbar li a.active {
-  background-color: #032687;
-  color: #f2f2f2;
-}
+
 	.navdiv {
 	 display: flex;
 	 text-align: center; 
@@ -65,7 +58,8 @@
 	}
 	
 	li a{
-	color: black; font-size: clamp(0.5em, 3vw ,1.5625em); padding: 12px;
+	color: black; font-size: clamp(1.25em, 3vw ,1.5625em); padding: 12px;
+	text-decoration: none;
 	}
 	
 	ul.navLeft{
@@ -119,8 +113,26 @@
 		"news1 news1 news2 news2 news3 news3";
 	}
 	
+	@media (width > 62.5em) {
+		.navbar li a:hover{
+		
+		background-size: 1.875em !important;
+		background-color: #032687 !important;
+		color: white !important;
+		box-shadow: .1875em .625em .625em .625em #1a1818a1 !important;
+		position:relative !important;
+		z-index: 3 !important;
+		
+	}
+	}
 	
 	@media (width < 62.5em) {
+		
+		.logo img{
+		width: 100px;
+		top: -25px;
+	}
+		
 		ul.navLeft{
 			display:grid;
 			grid-template-columns: 1fr;
@@ -348,11 +360,13 @@
 	
 	.fmquestion{
 		grid-area: QA;
-		place-items: center;
 	
 	}
 	
 	.fmquestion .section4{
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 		text-align: center;
 		align-content: center;
 		background-color: white;
@@ -372,9 +386,12 @@
 		font-size: clamp(0.3em, 4vw, 1.5625em);
 	}
 	.news1{
+		position: relative;
 		grid-area: news1;
 		font-size: clamp(0.3em, 4vw, 1.5625em);  
 		text-align: center; 
+		left: 50%;
+		transform: translateX(-50%);
 		height: 32rem; 
 		grid-template-columns: 1fr;
 		grid-template-rows: 32em, 1fr;
@@ -385,6 +402,9 @@
 		"Alink1";
 		}
 	.news2{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 	grid-area: news2; 
 	font-size: clamp(0.3em, 4vw, 1.5625em);  
 	text-decoration: underline; 
@@ -399,6 +419,9 @@
 	"Alink2";	
 	}
 	.news3{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
 	grid-area: news3; 
 	font-size: clamp(0.3em, 4vw, 1.5625em); 
 	text-decoration: underline; 
@@ -492,8 +515,8 @@
 	.footerContainer .footer-nav-bar-links{
 		grid-row: span 2;
 		grid-column: span 1;
-		padding: 10px;
 		text-align: left;
+		
 	}
 	
 	
@@ -503,6 +526,7 @@
 		font-size: 18px;
 		margin: 5px;
 		color: white;
+		text-decoration: none;
 	}
 	
 	.footerContainer a:hover{

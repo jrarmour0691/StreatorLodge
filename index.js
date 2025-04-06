@@ -13,3 +13,22 @@ img.addEventListener('mouseout', () => {
     img.src = 'img/Facebook Blue.png'; // Revert to the original image
 });
 
+
+// Select logo elements text
+    const homeText = document.querySelector('.home-text');
+
+    // Function to toggle writing depending on screen size
+    function toggleLogo() {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth < 768) { // Define your breakpoint (e.g., 768px for smaller screens)
+            homeText.classList.remove('d-none'); // Show "Home Page"
+        } else {
+            homeText.classList.add('d-none'); // Hide "Home Page"
+        }
+    }
+
+    // Add event listeners
+    window.addEventListener('resize', toggleLogo); // Run on screen resize
+    window.addEventListener('load', toggleLogo);   // Run when the page is loaded
+
