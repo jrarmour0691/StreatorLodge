@@ -11,7 +11,7 @@
 	
 
 </head>
-<body onload= "ontoggleLogo()">
+<body onload= "toggleLogo()">
 	<img class = "coverPhoto" src = "../img/Join Us.png" alt = "Picture of three Brothers at ARC Nursing Home in Streator, IL"></img>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
     <div class="container-fluid">
@@ -267,26 +267,26 @@
   </div>
   <ul class="list-group list-group-flush px-3">
   <!--	Form Validation	-->
-  <form class="row g-3 needs-validation">
+  <form class="row g-3 needs-validation" action="https://formspree.io/f/mldjopbz" method="POST">
 
 		<label for="check1 check2" class="form-label pt-1">Are you a male?</label>
 		<div class="form-check col-auto me-2 ms-3">
-			<input class="form-check-input" type="radio" name="CheckOptions" id="check1" value="Yes" required>
+			<input class="form-check-input" type="radio" id="check1" name="male" value="Yes" required>
 			<label class="form-check-label" for="check1">Yes</label>
 		</div>
 		<div class="form-check col-auto me-2">
-			<input class="form-check-input" type="radio" name="CheckOptions" id="check2" value="No" required>
+			<input class="form-check-input" type="radio" id="check2" name="male" value="No" required>
 			<label class="form-check-label" for="check2">No</label>
 			<div class="invalid-feedback">Please Select Yes or No</div>
 		</div>
 	
 	<label for="inlineRadioOptionsTwo" class="form-label pt-1">Are you 18 or older?</label>
 		<div class="form-check col-auto me-2 ms-3">
-			<input class="form-check-input" type="radio" name="CheckOptionsTwo" id="inlineRadio1" value="Yes" required>
+			<input class="form-check-input" type="radio" id="inlineRadio1" name="oldEnough" value="Yes" required>
 			<label class="form-check-label" for="inlineRadio1">Yes</label>
 		</div>
 		<div class="form-check col-auto me-2">
-			<input class="form-check-input" type="radio" name="CheckOptionsTwo" id="inlineRadio2" value="No" required>
+			<input class="form-check-input" type="radio" id="inlineRadio2" name="oldEnough" value="No" required>
 			<label class="form-check-label" for="inlineRadio2">No</label>
 			<div class="invalid-feedback">Please Select Yes or No</div>
 		</div>
@@ -296,14 +296,14 @@
 	
 	<div class="col-md-6">
     <label for="fname" class="form-label">First name</label>
-    <input type="text" class="form-control" id="fname" placeholder="John" required>
+    <input type="text" class="form-control" id="fname" name="fname" placeholder="John" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-6">
     <label for="lname" class="form-label">Last name</label>
-    <input type="text" class="form-control" id="lname" placeholder="Jones" required>
+    <input type="text" class="form-control" id="lname" name="lname" placeholder="Jones" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -312,7 +312,7 @@
   
 	<div class="col-md-12">
     <label for="email" class="form-label">What is your email address?</label>
-    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -322,7 +322,7 @@
   
   <div class="col-md-12">
         <label for="phoneNumber" class="form-label">What is your personal mobile phone number?</label>
-        <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" 
+        <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" name="phoneNumber" 
                pattern="[0-9]{10}" required 
                placeholder="Enter a 10-digit phone number">
         <div class="invalid-feedback">
@@ -332,7 +332,7 @@
 	
 	<div class="col-md-12">
     <label for="address" class="form-label">Please enter your address?</label>
-    <input type="text" class="form-control" id="address" placeholder="218 N. Sterling Street Streator, IL" required>
+    <input type="text" class="form-control" id="address" name= "address" placeholder="218 N. Sterling Street Streator, IL" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -342,11 +342,11 @@
   
   <label for="CheckOptionsThree" class="form-label pt-1">Do you profess a belief in a Supreme Being?</label>
 		<div class="form-check col-auto me-2 ms-3">
-			<input class="form-check-input" type="radio" name="CheckOptionsThree" id="check3" value="Yes" required>
+			<input class="form-check-input" type="radio" id="check3" name="beliefInGod" value="Yes" required>
 			<label class="form-check-label" for="inlineRadio1">Yes</label>
 		</div>
 		<div class="form-check col-auto me-2">
-			<input class="form-check-input" type="radio" name="CheckOptionsThree" id="check4" value="No" required>
+			<input class="form-check-input" type="radio" id="check4" name="beliefInGod" value="No" required>
 			<label class="form-check-label" for="inlineRadio2">No</label>
 			<div class="invalid-feedback">Please Select Yes or No</div>
 		</div>
@@ -355,11 +355,11 @@
 
 		<label for="CheckOptionsFour" class="form-label pt-1">Have you previously petitioned or submitted a membership application to a Masonic Lodge?</label>
 		<div class="form-check col-auto me-2 ms-3">
-			<input class="form-check-input" type="radio" name="CheckOptionsFour" id="check5" value="Yes" required>
+			<input class="form-check-input" type="radio" id="check5" name="petitionedBefore" value="Yes" required>
 			<label class="form-check-label" for="inlineRadio1">Yes</label>
 		</div>
 		<div class="form-check col-auto me-2">
-			<input class="form-check-input" type="radio" name="CheckOptionsFour" id="check6" value="No" required>
+			<input class="form-check-input" type="radio" id="check6" name="petitionedBefore" value="No" required>
 			<label class="form-check-label" for="inlineRadio2">No</label>
 			<div class="invalid-feedback">Please Select Yes or No</div>
 		</div>
@@ -367,7 +367,7 @@
 		
 	<div class="col-md-12">
     <label for="appliedBefore" class="form-label">If you've previously petitioned or submitted a membership application to a Masonic Lodge, provide it's name, number, and location below.</label>
-    <input type="text" class="form-control" id="appliedBefore" placeholder="If selected no above, put 'none' here" required>
+    <input type="text" class="form-control" id="appliedBefore" name="lodgeInfo" placeholder="If selected no above, put 'none' here" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -377,11 +377,11 @@
  
   <label for="CheckOptionsFive" class="form-label pt-1"> Have you resided in the state of Illinois for the past six months?</label>
 		<div class="form-check col-auto me-2 ms-3">
-			<input class="form-check-input" type="radio" name="CheckOptionsFive" id="check7" value="Yes" required>
+			<input class="form-check-input" type="radio" name="resided" id="check7" value="Yes" required>
 			<label class="form-check-label" for="inlineRadio1">Yes</label>
 		</div>
 		<div class="form-check col-auto me-2">
-			<input class="form-check-input" type="radio" name="CheckOptionsFive" id="check8" value="No" required>
+			<input class="form-check-input" type="radio" name="resided" id="check8" value="No" required>
 			<label class="form-check-label" for="inlineRadio2">No</label>
 			<div class="invalid-feedback">Please Select Yes or No</div>
 		</div>
@@ -389,7 +389,7 @@
   
 		<div class="col-md-12">
     <label for="message" class="form-label">Tell us about yourself, your interest in Freemasonry or share any other thoughts.</label>
-    <input type="text" class="form-control" id="message" required>
+    <input type="text" class="form-control" id="message" name="message" required>
     <div class="valid-feedback">
       Looks good!
     </div>
