@@ -52,6 +52,7 @@
 		background-color: white;
 		border-radius: 50%; /* This makes the element a circle */
 		box-shadow: 3px 10px 10px #1a1818a1;
+		z-index: 10;
 	}
 	li{
 	list-style: none; display: inline-block;
@@ -499,7 +500,7 @@
 		display: grid;
 		grid-template-columns:repeat(2, 1fr);
 		grid-template-rows: repeat(3, 1fr);
-		height: 200px;
+		height: auto;
 		background-color: #363636;
 	}
 	
