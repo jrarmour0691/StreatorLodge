@@ -1,0 +1,100 @@
+.img_main {
+	display: flex;
+	width: 100%;
+	justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+
+}
+
+.MainIMG {
+	max-width: 100%;
+}
+
+.mainHeading {
+	position: absolute; /* Allows text to overlap the image */
+    top: 75%;           /* Centers the text vertically */
+    left: 50%;          /* Centers the text horizontally */
+    transform: translate(-50%, -50%); /* Corrects the offset caused by top/left */
+    color: white;       /* Adjust text color for visibility */
+	text-wrap: balance;
+    font-size: clamp(1.5em, 5vw,4em);    /* Customize font size */
+    font-weight: bold;  /* Makes text bold */
+    text-align: center; /* Aligns text within its box */
+}
+
+.messageImg {
+	font-size: clamp(1em, 3vw, 2em);
+	font-style: italic;
+	margin: 5px;
+	padding: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	text-align: center;
+	text-wrap: balance;
+	background-color: lightgray;
+	color: #032687;
+}
+
+.contactinnerPage ul {
+	list-style-type: disc !important;
+	display: block;
+	padding-left: 2em;
+}
+
+.show-disc {
+	font-size: clamp(.95em, 2vw, 1em);
+	display: list-item;
+	text-wrap: balance;
+	list-style-type: disc !important;
+	padding-left: 2em;
+}
+/*Qualidications Section*/
+.card_Qualidications {
+		/*Center card*/
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+		/*alignment of the text and content within the div, text color*/
+		text-align: left;
+		align-content: center;
+		color: white;
+		/*css for the card itself*/
+		background-color: #032687;
+		box-shadow: 3px 10px 10px #1a1818a1;
+		border-radius: 4px;
+		width: 90%;
+		height: 20em;
+		padding: 2em;
+		margin-top: 2em;
+		margin-bottom: 2em;
+		
+		@media (max-width: 768px){
+			height: auto;
+		}
+	}
+
+	
+	.card_Qualidications h3 {
+		font-size: 1.35em;
+		text-wrap: balance;
+	}
+	
+	.card_Qualidications ul {
+		margin-left: 1em;
+		margin-top: .5em;
+		margin-bottom: .5em;
+	}
+	
+	.card_Qualidications ul li {
+		margin-top: .5em;
+		margin-bottom: .5em;
+	}
+
+/*Links Hovered over will lose there underline if they have it*/
+.show-underline-links:hover {
+	text-decoration: none !important;
+	color: #032687 !important;
+}
+
+
+
