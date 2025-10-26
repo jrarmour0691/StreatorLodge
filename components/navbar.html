@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body onload= "toggleLogo()">
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+    <div class="container-fluid">
+        
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto navLeft">
+                <li class="navLi"><a href="../Contact-Us/" id="nav-bar-item1">Contact</a></li>
+                <li class="navLi"><a href="../Events/" id="nav-bar-item2">Events</a></li>
+                <li class="navLi"><a href="../Donate/" id="nav-bar-item3">Donate</a></li>
+            </ul>
+			<a class="navbar-brand" href="../">
+            <div class="logo"><img src="../img/Logo.png" alt="Logo"></div>
+			<span class="home-text" style= "position: relative; top: -.75em; left: 35%; transition: transformX(-55%); ">Home Page</span>
+			</a>
+            <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 navRight">
+                <li class="navLi"><a href="https://streatorlodge.printify.me/category/all/1" id="nav-bar-item4">Store</a></li>
+                <li class="navLi"><a href="../Officers/" id="nav-bar-item5">Officers</a></li>
+                <li class="navLi"><a href="../Join Us/" id="nav-bar-item6">Join Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<script>
+// Select logo elements text
+    const homeText = document.querySelector('.home-text');
+
+    // Function to toggle writing depending on screen size
+    function toggleLogo() {
+        const screenWidth = window.innerWidth;
+
+        if (screenWidth < 990) { // Define your breakpoint (e.g., 768px for smaller screens)
+            homeText.classList.remove('d-none'); // Show "Home Page"
+        } else {
+            homeText.classList.add('d-none'); // Hide "Home Page"
+        }
+    }
+</script>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

@@ -11,35 +11,21 @@
 
 </head>
 <body onload= "toggleLogo()">
-	<img class = "coverPhoto" src = "img/CoverIMG.png" class = "coverimg" alt = "logo"></img>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-    <div class="container-fluid">
-        
-        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto navLeft">
-                <li><a href="Contact-Us/index.html" id="nav-bar-item1">Contact</a></li>
-                <li><a href="Events/index.html" id="nav-bar-item2">Events</a></li>
-                <li><a href="Donate/index.html" id="nav-bar-item3">Donate</a></li>
-            </ul>
-			<a class="navbar-brand" href="">
-            <div class="logo"><img src="img/Logo.png" alt="Logo"></div>
-			<span class="home-text" style= "position: relative; top: -.75em; left: 35%; transition: transformX(-55%);">Home Page</span>
-			</a>
-            <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0 navRight">
-                <li><a href="https://streatorlodge.printify.me/category/all/1" id="nav-bar-item4">Store</a></li>
-                <li><a href="Officers/index.html" id="nav-bar-item5">Officers</a></li>
-                <li><a href="Join Us/index.html" id="nav-bar-item6">Join Us</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
+	<!-- <img class = "coverPhoto" src = "img/CoverIMG.png" class = "coverimg" alt = "logo"></img> -->
+	<div class="container">
+	<div id="header-placeholder"></div>
+    <script src ="../router/callHeader.js"></script>
+
+	<!--	NavBar Section	-->
+	<div id="navbar-placeholder"></div>
+  	<script src ="../router/callNav.js"></script>
+
+	</div>
+
 
 	<div class = "innerPage">
 		<div class = "welcome">
-			<img id = "welcomeImg" src = "img/welcome message.png" style = "width: 100%; padding: 15px;" alt ="The three books for bikes winners and there families in front of the G in the East at Streator Masonic Lodge." class = "welcomeIMG"></img>
+			<img id = "welcomeImg" src = "img/homepage_hero.svg" style = "width: 100%; padding: 15px;" alt ="Brothers for the lodge taking the widowed wife of members out for the widows luncheon" class = "welcomeIMG"></img>
 		</div>
 		<div class = "sectionHeader">
 			<h1> Why We're Here </h1>
@@ -48,7 +34,7 @@
 		
 			<h2 id = "section1header">Brotherhood and Support</h2>
 			<p id = "section1detail">We are a family of brothers committed to supporting one another and our community. At Streator Masonic Lodge, we believe in the power of brotherhood and mutual support, fostering a sense of belonging and unity among our members.</p>
-			<button class = "btn1">Member Benefits</button>
+			<button class = "btn1" onclick = "window.location.href ='construction.html'">Member Benefits</button>
 		</div>
 		<div class = "p1IMG">
 			<img id = "supportpicture" src = "img/Lockbaum.png" style = "width: 100%" alt = "Group of Brothers, visiting a 106 year old, 75 year member"></img>
@@ -58,7 +44,7 @@
 		
 			<h2 id = "section2header">Community Impact</h2>
 			<p id = "section2detail">Our lodge is dedicated to making a positive impact in our community through service, fellowship, and charity. Our members actively participate in various community service projects, striving to make Streator a better place for everyone.</p>
-			<button class = "btn1">Support Our Mission</button>
+			<button class = "btn1" onclick = "window.location.href ='construction.html'">Support Our Mission</button>
 		</div>
 		<div class = "p2IMG">
 			<img id = "supportpicture2" src = "img/United in Charity $7K Special Needs Bike Donation.png" style = "width: 100%" alt = "United in Charity $7K Special Needs Bike Donation"></img>
@@ -69,7 +55,7 @@
 		
 			<h2 id = "section3header">Lifelong Friendships</h2>
 			<p id = "section3detail">Streator Masonic Lodge is where friendships are formed and lifelong bonds are created. Discover more about our vibrant activities and events here, and see how you can get involved in our mission of community service and brotherhood.</p>
-			<button class = "btn1">Get Involved</button>
+			<button class = "btn1" onclick = "window.location.href ='construction.html'">Get Involved</button>
 		</div>
 		<div class = "p3IMG">
 			<img id = "supportpicture3" src = "img/Streator Pluto Fest.png" style = "width: 100%" alt = "Three Brothers having a good time and bonding helping at Streator's Pluto Fest"></img>
@@ -80,9 +66,9 @@
 			<div class = "section4">
 				<h3>What is Freemasonry?</h3>
 				<p>At its core, Freemasonry is about improving oneself and contributing positively to the community.</p>
-				<button class = "btn1">Learn More</button>
-				<button class = "btn1">Join Our Brotherhood</button>
-				<button class = "btn1">Connect with Members</button>
+				<button class = "btn1" onclick = "window.location.href ='construction.html'">Learn More</button>
+				<button class = "btn1" onclick = "window.location.href ='construction.html'">Join Our Brotherhood</button>
+				<button class = "btn1" onclick = "window.location.href ='construction.html'">Connect with Members</button>
 			</div>
 		</div>
 		
@@ -90,37 +76,17 @@
 			<h1> News </h1>
 		</div>
 		
-			<div class = "news1"><img class = "articleImg1" src = "img/Logo.png"></img><a class= "d-flex justify-content-center" href = "" id ="articleLink1">Article Coming Soon</a></div>
-			<div class = "news2"><img class = "articleImg2" src = "img/Logo.png"></img><a class= "d-flex justify-content-center" href = "" id ="articleLink2">Article Coming Soon</a></div>
-			<div class = "news3"><img class = "articleImg2" src = "img/Logo.png"></img><a class= "d-flex justify-content-center" href = "" id ="articleLink3">Article Coming Soon</a></div>
+			<div class = "news1"><img class = "articleImg1" src = "img/Logo.png"></img><a class= "d-flex justify-content-center" href = "construction.html" id ="articleLink1">Article Coming Soon</a></div>
+			<div class = "news2"><img class = "articleImg2" src = "img/Logo.png"></img><a class= "d-flex justify-content-center" href = "construction.html" id ="articleLink2">Article Coming Soon</a></div>
+			<div class = "news3"><img class = "articleImg2" src = "img/Logo.png"></img><a class= "d-flex justify-content-center" href = "construction.html" id ="articleLink3">Article Coming Soon</a></div>
 		
 
 	</div>
 
-
-
-
-
-<!--	Footer	-->
-	<footer>
-				<div class="footerContainer">
-					<div class="copyright">
-						<p>&copy; 2025 Streator Masonic Lodge 607, Streator, IL USA. All rights reserved</p>
-					</div>            
-					<div class = "footer-nav-bar-links">	
-						<p style="text-decoration: underline; color: white; text-align: center; font-size: 1.5em;">Tools</p>
-						<a href="https://slatemaker.flutterflow.app/login" class= "footer-nav-item">Slate Maker App</a> 
-						
-						
-					</div>
-					
-					<div class = "footer-social-links">
-					<h3>Follow Us</h3>
-					<div id = "linkContainer">
-					<a id = "facebookLink" href = "https://www.facebook.com/streator.lodge"><img id = "Facebook" alt= "Facebook Link" src = "img/Facebook Blue.png"></img></a>
-					</div>
-				</div>        
-	</footer>  
+   <div id="footer-placeholder"></div>
+  <script src ="../router/callfooter.js"></script>
+  <script src ="../components/facebookShift.js"></script>
+  <script src ="../components/notify.js"></script>
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="index.js"></script> 	
