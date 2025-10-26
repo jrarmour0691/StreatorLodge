@@ -1,4 +1,6 @@
-  //resize logo header text and remove search bar when screen gets to small
+
+    window.addEventListener("load", function () {
+          //resize logo header text and remove search bar when screen gets to small
   const search = document.querySelector('.form-control');
 	const headerLogo = document.querySelector('.header-logo');
 
@@ -20,3 +22,4 @@
     // Add event listeners
     window.addEventListener('resize', toggleLogoName); // Run on screen resize
     window.addEventListener('load', toggleLogoName);   // Run when the page is loaded
+});
