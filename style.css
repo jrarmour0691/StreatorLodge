@@ -10,6 +10,7 @@
 		min-height: 100vh;
 		max-width: 100%;
 	}
+	
 	.coverPhoto{
 	width: 100%;
 	max-height: 400px;
@@ -54,11 +55,11 @@
 		box-shadow: 3px 10px 10px #1a1818a1;
 		z-index: 10;
 	}
-	li{
+	li.navLi{
 	list-style: none; display: inline-block;
 	}
 	
-	li a{
+	li.navLi a {
 	color: black; font-size: clamp(1.25em, 3vw ,1.5625em); padding: 12px;
 	text-decoration: none;
 	}
@@ -115,7 +116,7 @@
 	}
 	
 	@media (width > 62.5em) {
-		.navbar li a:hover{
+		.navbar li.navLi a:hover{
 		
 		background-size: 1.875em !important;
 		background-color: #032687 !important;

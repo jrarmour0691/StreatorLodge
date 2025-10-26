@@ -1,6 +1,7 @@
 .contactinnerPage {
 	display: grid;
-	max-width: 100%;
+	place-items: center; /* Centers both horizontally and vertically */
+	max-width: 95%;
 	grid-template-columns:1fr, 1fr;
 	grid-template-rows:1fr;
 	grid-template-areas: "info img";
