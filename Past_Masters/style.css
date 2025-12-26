@@ -1,0 +1,23 @@
+.pm-card {
+  height: 350px; /* adjust as needed */
+}
+
+.pm-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.pm-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  /* Tempered glass effect */
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
