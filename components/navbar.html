@@ -4,21 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="../style.css" />
 
-    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
     <style>
-      /* Ensures nav items align to the bottom of the navbar */
       .navbar-nav .nav-link {
         display: flex;
         align-items: flex-end;
         padding-bottom: 0.5rem;
       }
 
-      /* Optional: keeps logo centered cleanly */
       .navbar-brand {
         display: flex;
         flex-direction: column;
@@ -29,10 +26,14 @@
       .navbar-brand img {
         max-height: 60px;
       }
+
+      .no-caret::after {
+        display: none !important;
+      }
     </style>
   </head>
 
-  <body onload="toggleLogo()">
+  <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
       <div class="container-fluid">
         <!-- Mobile Toggle -->
@@ -69,12 +70,28 @@
           </ul>
 
           <!-- CENTER LOGO -->
-          <a class="mx-auto text-center" href="../">
+          <a class="mx-auto text-center d-none d-lg-block" href="../">
             <div class="logo">
               <img src="../img/Logo.png" alt="Logo" />
             </div>
-            <span class="home-text d-none">Home Page</span>
+            <span class="home-text d-none">Home</span>
           </a>
+
+          <ul class="navbar-nav mx-auto my-0 d-lg-none">
+            <li class="navLi">
+              <a
+                class="nav-link"
+                href="../"
+                style="
+                  margin: 0px;
+                  position: relative;
+                  left: 34%;
+                  transition: transformX(-55%);
+                "
+                >Home</a
+              >
+            </li>
+          </ul>
 
           <!-- RIGHT NAV -->
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 navRight">
@@ -87,23 +104,15 @@
               >
             </li>
 
-            <li class="navLi nav-item dropdown" id="nav-bar-item5">
+            <li class="navLi">
               <a
                 class="nav-link"
-                id="dropdown01"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                href="#"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#leadershipMenu"
               >
                 Leadership
               </a>
-              <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="../Officers/"
-                  >Current Officers</a
-                >
-                <a class="dropdown-item" href="../Past_Masters/"
-                  >Past Masters</a
-                >
-              </div>
             </li>
 
             <li class="navLi">
@@ -116,23 +125,28 @@
       </div>
     </nav>
 
-    <!-- JS: Show/Hide Home Text -->
-    <script>
-      const homeText = document.querySelector(".home-text");
+    <!-- NAV offcanvas for Leadership -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="leadershipMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Leadership</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
 
-      function toggleLogo() {
-        const screenWidth = window.innerWidth;
-
-        if (screenWidth < 990) {
-          homeText.classList.remove("d-none");
-        } else {
-          homeText.classList.add("d-none");
-        }
-      }
-
-      window.addEventListener("resize", toggleLogo);
-      window.addEventListener("load", toggleLogo);
-    </script>
+      <div class="offcanvas-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a class="text-muted" href="../Officers/">Current Officers</a>
+          </li>
+          <li class="list-group-item">
+            <a class="text-muted" href="../Past_Masters/">Past Masters</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script
