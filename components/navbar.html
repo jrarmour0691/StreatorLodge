@@ -58,9 +58,14 @@
               >
             </li>
             <li class="navLi">
-              <a class="nav-link" href="../Events/" id="nav-bar-item2"
-                >Events</a
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#programsMenu"
               >
+                Programs
+              </a>
             </li>
             <li class="navLi">
               <a class="nav-link" href="../Donate/" id="nav-bar-item3"
@@ -143,6 +148,71 @@
           </li>
           <li class="list-group-item">
             <a class="text-muted" href="../Past_Masters/">Past Masters</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- NAV offcanvas for Programs -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="programsMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Programs</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+
+      <div class="offcanvas-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a class="text-muted" href="../Events/">Event Calendar</a>
+          </li>
+          <!-- Scholarships Accordion -->
+          <li class="list-group-item p-0">
+            <div class="accordion" id="scholarshipAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="scholarshipHeading">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#scholarshipCollapse"
+                    aria-expanded="false"
+                    aria-controls="scholarshipCollapse"
+                  >
+                    Scholarships
+                  </button>
+                </h2>
+
+                <div
+                  id="scholarshipCollapse"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="scholarshipHeading"
+                  data-bs-parent="#scholarshipAccordion"
+                >
+                  <div class="accordion-body p-0">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                        <a class="text-muted" href="../Beal_Scholarship/"
+                          >Duane R. Beal Annual Scholarship</a
+                        >
+                      </li>
+                      <li class="list-group-item">
+                        <a
+                          class="text-muted"
+                          href="https://ilscottishrite.org/icod-scholarship-program/"
+                          target="_blank"
+                          rel="noopener"
+                          >Illinois Grand Lodge Scholarships</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
